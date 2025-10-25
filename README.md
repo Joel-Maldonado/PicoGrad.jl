@@ -52,6 +52,27 @@ println(b.grad)  # ~645.5773
 julia examples/nn_example.jl
 ```
 
+Training output:
+
+```
+epoch 50: loss = 0.14017297341446447
+epoch 100: loss = 0.0658203910391573
+epoch 150: loss = 0.011419044527953035
+epoch 200: loss = 0.001282916375132894
+epoch 250: loss = 0.00011858058069798822
+epoch 300: loss = 1.0359059272538363e-5
+epoch 350: loss = 8.964231523074673e-7
+epoch 400: loss = 7.771685380572547e-8
+epoch 450: loss = 6.539262865335369e-9
+epoch 500: loss = 5.670266403114571e-10
+
+Final predictions:
+x=[0.0, 0.0] -> y=3.983029754162726e-5 (target=0.0)
+x=[0.0, 1.0] -> y=0.9999801682042224 (target=1.0)
+x=[1.0, 0.0] -> y=0.9999897957666979 (target=1.0)
+x=[1.0, 1.0] -> y=7.308470523104127e-6 (target=0.0)
+```
+
 ### Visualization (optional)
 
 Install Plots.jl once and run any of the scripts:
