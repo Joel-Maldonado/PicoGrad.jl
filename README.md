@@ -1,6 +1,6 @@
 # PicoGrad.jl
 
-A tiny scalar autograd engine in Julia, plus a very small neural networks library on top. Based on Andrej Karpathy’s [micrograd](https://github.com/karpathy/micrograd), this project reimplements the engine in Julia, makes it functional rather than OOP, and adds modest improvements while keeping it concise, simple, and readable.
+A tiny scalar autograd engine in Julia, plus a very small neural networks library on top. Based on Andrej Karpathy’s [micrograd](https://github.com/karpathy/micrograd), this project reimplements the engine in pure Julia and adds modest improvements while keeping it concise, simple, and readable.
 
 > Note: This is not a professional project, and is meant for fun and experimentation. It was also used as an educational exercise for me and can also be used like that for anyone curious to read the code. This project is kept intentionally small, concise, simple, and easy to read and understand.
 
@@ -97,6 +97,13 @@ julia examples/visualize_decision_boundary.jl   # XOR decision boundary → imag
 - Scalars only. Vectors are plain Julia arrays of `Value`.
 - Gradients accumulate across calls, so you need to reset with `zero_grad!`.
 - A layer returns a single `Value` when `nout == 1`, otherwise a vector.
+
+### A Quick, Informal Tour
+
+- What this is: a tiny, readable autograd toy in Julia. You can skim `src/engine.jl` and understand the whole thing fairly quickly.
+- What it’s not: fancy, or production‑ready. It’s for learning, tinkering, and demystifying autodiff.
+- Where to look first: open `src/engine.jl` to see `Value`, the basic ops (`+`, `*`, `^`, `/`, `relu`), and how `backward!` walks the graph.
+- Then try `examples/nn_example.jl` to watch loss fall on XOR.
 
 ### License
 
